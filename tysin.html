@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MVC Foodies | Good Food. Real Taste.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+      <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf4;
+    color: #25150b;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+:root {
+    --orange: #ed650d;
+    --light-orange: #ff8a21;
+    --brown: #2b1609;
+    --cream: #fffaf4;
+    --white: #ffffff;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    width: 100%;
+    min-height: 90px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 4%;
+    gap: 25px;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chef {
+    font-size: 38px;
+}
+
+.logo h1 {
+    font-size: 34px;
+    line-height: 25px;
+    letter-spacing: -2px;
+}
+
+.logo h2 {
+    color: var(--orange);
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.logo p {
+    font-size: 9px;
+    color: #555;
+    margin-top: 4px;
+}
+
+.header nav {
+    display: flex;
+    gap: 28px;
+}
+
+.header nav a {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.header nav a:hover,
+.header nav .active {
+    color: var(--orange);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right a {
+    font-weight: bold;
+}
+
+.header-right i {
+    color: var(--orange);
+}
+
+.cart {
+    position: relative;
+    font-size: 23px;
+}
+
+.cart span {
+    position: absolute;
+    top: -9px;
+    right: -10px;
+
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--orange);
+    color: white;
+
+    font-size: 10px;
+    border-radius: 50%;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: 520px;
+
+    padding: 50px 4%;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+    align-items: center;
+}
+
+.hero-content {
+    padding-right: 30px;
+}
+
+.script {
+    font-family: cursive;
+    font-size: 31px;
+    color: var(--orange);
+    font-style: italic;
+}
+
+.hero h2 {
+    font-size: 57px;
+    line-height: .95;
+    margin: 12px 0 20px;
+}
+
+.hero h2 span {
+    color: var(--orange);
+}
+
+.description {
+    color: #555;
+    max-width: 470px;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.orange {
+    background: var(--orange);
+    color: white;
+}
+
+.orange:hover {
+    background: var(--light-orange);
+}
+
+.white {
+    background: white;
+    color: var(--brown);
+    border: 1.5px solid var(--orange);
+}
+
+
+/* FEATURES */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.features > div {
+    text-align: center;
+    padding: 8px;
+    border-right: 1px solid #ddd;
+}
+
+.features > div:last-child {
+    border: none;
+}
+
+.features i {
+    color: var(--orange);
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.features h4 {
+    font-size: 11px;
+}
+
+.features p {
+    font-size: 10px;
+    color: #777;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    height: 480px;
+    border-radius: 0 0 0 80px;
+}
+
+.taste {
+    position: absolute;
+
+    left: -30px;
+    top: 45px;
+
+    width: 125px;
+    height: 125px;
+
+    border-radius: 50%;
+
+    background: var(--brown);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    border: 5px solid white;
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title p,
+.orange-title {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+    background: white;
+    padding: 45px 4%;
+}
+
+.category-grid {
+    max-width: 1120px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+
+    gap: 15px;
+}
+
+.category-card {
+    background: white;
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+
+    transition: .3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card img {
+    height: 130px;
+}
+
+.category-text {
+    padding: 12px;
+}
+
+.category-text span {
+    background: var(--orange);
+    color: white;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    margin-top: -32px;
+
+    position: relative;
+    border: 4px solid white;
+}
+
+.category-text h3 {
+    font-size: 15px;
+    margin-top: 7px;
+}
+
+.category-text p {
+    font-size: 12px;
+    color: #777;
+}
+
+
+/* ================= WHY ================= */
+
+.why {
+    background: var(--brown);
+    color: white;
+
+    padding: 55px 4%;
+}
+
+.why-content {
+    max-width: 1120px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.why-text h2 {
+    font-size: 35px;
+    margin: 8px 0 12px;
+}
+
+.why-text > p {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.why-items {
+    margin-top: 25px;
+    display: grid;
+    gap: 18px;
+}
+
+.why-items > div {
+    display: flex;
+    gap: 13px;
+}
+
+.why-items i {
+    min-width: 42px;
+    height: 42px;
+
+    background: var(--orange);
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-items h3 {
+    font-size: 15px;
+}
+
+.why-items p {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.why-image img {
+    height: 340px;
+    border-radius: 18px;
+}
+
+
+/* ================= MENU ================= */
+
+.menu {
+    padding: 50px 4%;
+}
+
+.menu-grid {
+    max-width: 1120px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+
+    gap: 15px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+
+    position: relative;
+}
+
+.food-card img {
+    height: 145px;
+}
+
+.food-card h3 {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 8px 10px;
+}
+
+.price {
+    position: absolute;
+
+    top: 115px;
+    left: 10px;
+
+    background: var(--orange);
+    color: white;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.food-card button {
+    width: 90%;
+    margin: 0 5% 15px;
+
+    padding: 10px;
+
+    background: var(--brown);
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.food-card button:hover {
+    background: var(--orange);
+}
+
+.view-menu {
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+/* ================= ORDER ================= */
+
+.order {
+    background: #fff1dc;
+
+    padding: 35px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.order > div:first-child > p {
+    color: var(--orange);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.order h2 {
+    font-size: 30px;
+}
+
+.order h2 span {
+    color: var(--orange);
+}
+
+.order-phone {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.order-phone > i {
+    font-size: 50px;
+    color: var(--brown);
+}
+
+.order-phone p {
+    color: #555;
+}
+
+.order-phone h2 {
+    color: var(--orange);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: var(--brown);
+    color: white;
+
+    padding: 45px 5% 20px;
+}
+
+.footer-grid {
+    max-width: 1120px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+
+    gap: 30px;
+}
+
+.footer-grid h3 {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.footer-grid a,
+.footer-grid p {
+    display: block;
+    color: #ddd;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+}
+
+.footer-logo h3 {
+    color: var(--orange);
+    letter-spacing: 5px;
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social a {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #806b5d;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social a:hover {
+    background: var(--orange);
+}
+
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid #5d483a;
+
+    margin-top: 30px;
+    padding-top: 18px;
+
+    color: #bbb;
+    font-size: 12px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+
+    .header nav {
+        gap: 13px;
+    }
+
+    .header-right a {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h2 {
+        font-size: 45px;
+    }
+
+    .category-grid,
+    .menu-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 12px 18px;
+    }
+
+    .header nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background: white;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        display: none;
+    }
+
+    .header nav a {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 30px;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image img {
+        height: 300px;
+        border-radius: 15px;
+    }
+
+    .taste {
+        left: 10px;
+        top: 15px;
+
+        width: 95px;
+        height: 95px;
+
+        font-size: 11px;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .features > div {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .category-grid,
+    .menu-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .why-content {
+        grid-template-columns: 1fr;
+    }
+
+    .why-image img {
+        height: 270px;
+    }
+
+    .order {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 450px) {
+
+    .logo h1 {
+        font-size: 27px;
+    }
+
+    .logo h2 {
+        font-size: 14px;
+    }
+
+    .logo p {
+        display: none;
+    }
+
+    .category-grid,
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons .btn {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+}
+      </style>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        <div class="chef">👨🏾‍🍳</div>
+
+        <div>
+            <h1>MVC</h1>
+            <h2>FOODIES</h2>
+            <p>Good Food. Real Taste. Every Time.</p>
+        </div>
+    </div>
+
+    <nav>
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#menu">Menu</a>
+        <a href="#services">Services</a>
+        <a href="#order">Order Online</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+        <a href="tel:672690095">
+            <i class="fa-solid fa-phone"></i>
+            672690095
+        </a>
+
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>0</span>
+        </div>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="script">Delicious Food</p>
+
+        <h2>
+            MADE WITH
+            <span>LOVE</span>
+        </h2>
+
+        <p class="description">
+            Enjoy a variety of tasty meals made with fresh ingredients
+            and authentic spices. Good food, great mood!
+        </p>
+
+        <div class="buttons">
+
+            <a href="#menu" class="btn orange">
+                <i class="fa-solid fa-cart-shopping"></i>
+                ORDER NOW
+            </a>
+
+            <a href="#menu" class="btn white">
+                <i class="fa-solid fa-utensils"></i>
+                VIEW MENU
+            </a>
+
+        </div>
+
+        <div class="features">
+
+            <div>
+                <i class="fa-solid fa-leaf"></i>
+                <h4>FRESH INGREDIENTS</h4>
+                <p>Healthy & Natural</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-chef-hat"></i>
+                <h4>EXPERT CHEFS</h4>
+                <p>Best In Town</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-motorcycle"></i>
+                <h4>FAST DELIVERY</h4>
+                <p>At Your Doorstep</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <h4>MADE WITH PASSION</h4>
+                <p>Just For You</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80"
+             alt="Delicious food">
+
+        <div class="taste">
+            TASTE<br>
+            THAT KEEPS<br>
+            YOU COMING<br>
+            BACK!
+            ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories" id="about">
+
+    <div class="section-title">
+        <p>OUR CATEGORIES</p>
+        <h2>What Would You Like Today?</h2>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80">
+            <div class="category-text">
+                <span>🍲</span>
+                <h3>African Dishes</h3>
+                <p>Rich traditional African meals full of flavor.</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=80">
+            <div class="category-text">
+                <span>🍝</span>
+                <h3>Pasta & Spaghetti</h3>
+                <p>Delicious pasta dishes for every craving.</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80">
+            <div class="category-text">
+                <span>🍚</span>
+                <h3>Rice & Meals</h3>
+                <p>Tasty rice meals with perfectly cooked sides.</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80">
+            <div class="category-text">
+                <span>🍜</span>
+                <h3>Noodles</h3>
+                <p>Stir-fried noodles with vegetables and protein.</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=80">
+            <div class="category-text">
+                <span>🍌</span>
+                <h3>Sides & Extras</h3>
+                <p>Plantains, sides and more to complete your meal.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY MVC ================= -->
+
+<section class="why" id="services">
+
+    <div class="why-content">
+
+        <div class="why-text">
+
+            <p class="orange-title">
+                WHY CHOOSE MVC FOODIES?
+            </p>
+
+            <h2>
+                Good Food,<br>
+                Great Moments
+            </h2>
+
+            <p>
+                We bring you meals that are not only delicious
+                but also prepared with care and hygiene.
+            </p>
+
+            <a href="#contact" class="btn orange">
+                LEARN MORE
+            </a>
+
+            <div class="why-items">
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <h3>Hygienic Cooking</h3>
+                        <p>We maintain the highest standards of cleanliness.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-leaf"></i>
+                    <div>
+                        <h3>Quality Ingredients</h3>
+                        <p>We use only fresh and premium ingredients.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-tag"></i>
+                    <div>
+                        <h3>Affordable Prices</h3>
+                        <p>Great taste doesn't have to be expensive.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="why-image">
+
+            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=80"
+                 alt="MVC Food">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="menu" id="menu">
+
+    <div class="section-title">
+        <p>POPULAR MENU</p>
+        <h2>Customer Favorites</h2>
+    </div>
+
+
+    <div class="menu-grid">
+
+        <div class="food-card">
+
+            <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=80">
+
+            <span class="price">FCFA 2500</span>
+
+            <h3>Jollof Rice & Chicken</h3>
+
+            <button>ADD TO CART</button>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80">
+
+            <span class="price">FCFA 2000</span>
+
+            <h3>Egusi Soup & Pounded Yam</h3>
+
+            <button>ADD TO CART</button>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=80">
+
+            <span class="price">FCFA 2000</span>
+
+            <h3>Chicken & Spaghetti</h3>
+
+            <button>ADD TO CART</button>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80">
+
+            <span class="price">FCFA 2200</span>
+
+            <h3>Fried Rice & Plantain</h3>
+
+            <button>ADD TO CART</button>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80">
+
+            <span class="price">FCFA 1800</span>
+
+            <h3>Noodles & Chicken</h3>
+
+            <button>ADD TO CART</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="view-menu">
+        <button class="btn white">VIEW ALL MENU</button>
+    </div>
+
+</section>
+
+
+<!-- ================= ORDER ================= -->
+
+<section class="order" id="order">
+
+    <div>
+        <p>HUNGRY?</p>
+        <h2>We've Got <span>You!</span></h2>
+
+        <small>
+            Order your favourite meal now and we'll deliver it
+            hot and fresh to you.
+        </small>
+    </div>
+
+    <div class="order-phone">
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <div>
+            <p>Call / WhatsApp</p>
+            <h2>672690095</h2>
+            <small>Fast Delivery | Great Taste | Best Service</small>
+        </div>
+    </div>
+
+    <a href="https://wa.me/237672690095" class="btn orange">
+        ORDER NOW →
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div class="footer-logo">
+
+            <h2>👨🏾‍🍳 MVC</h2>
+            <h3>FOODIES</h3>
+
+            <p>Good Food. Real Taste. Every Time.</p>
+
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/237672690095">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+
+        </div>
+
+
+        <div>
+            <h3>QUICK LINKS</h3>
+
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+
+        <div>
+            <h3>OUR SERVICES</h3>
+
+            <p>Delivery Service</p>
+            <p>Catering</p>
+            <p>Events & Parties</p>
+            <p>Bulk Orders</p>
+        </div>
+
+
+        <div>
+            <h3>CONTACT US</h3>
+
+            <p>📞 672690095</p>
+            <p>✉️ mvcfoodies@gmail.com</p>
+            <p>📍 Douala, Cameroon</p>
+        </div>
+
+
+        <div>
+            <h3>OPENING HOURS</h3>
+
+            <p>
+                Monday - Saturday<br>
+                8:00 AM - 10:00 PM
+            </p>
+
+            <br>
+
+            <p>
+                Sunday<br>
+                10:00 AM - 9:00 PM
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2024 MVC Foodies. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
